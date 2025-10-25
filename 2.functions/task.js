@@ -95,3 +95,15 @@ function makeWork(arrOfArr, func) {
   }
 
 }
+
+
+let ivan = {
+  firstName: "Ivan",
+}
+let oleg = ivan;
+oleg.firstName = "Oleg";
+
+console.log(ivan.firstName, oleg.first.Name);
+
+
+
