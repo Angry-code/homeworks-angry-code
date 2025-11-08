@@ -31,17 +31,16 @@ class AlarmClock {
 
     start() {
         if (this.intervalId) {
-
-        } else {
-            this.intervalId = setInterval(() => {
-                this.alarmCollection.forEach(call => {
-                    if (call.time === this.getCurrentFormattedTime() && call.canCall) {
-                        call.canCall = false;
-                        call.callback();
-                    }
-                })
-            }, 1000);
+            return;
         }
+        this.intervalId = setInterval(() => {
+            this.alarmCollection.forEach(call => {
+                if (call.time === this.getCurrentFormattedTime() && call.canCall) {
+                    call.canCall = false;
+                    call.callback();
+                }
+            })
+        }, 1000);
     }
 
     stop() {
